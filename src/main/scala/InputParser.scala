@@ -16,6 +16,13 @@ object InputParser {
       } catch {
         case _: NumberFormatException => None
       }
+
+    def unapply(c: Char): Option[Int] =
+      try {
+        Some(c.toString.toInt)
+      } catch {
+        case _: NumberFormatException => None
+      }
   }
 }
 
